@@ -123,7 +123,7 @@ empty string (""). So if we call the functions like below −
 set("foo","bar",1), get("foo",1), get("foo",3), set("foo","bar2",4), set("foo",4), set("foo",5),
 then the outputs will be: [null, “bar”, “bar”, null, “bar2”, “bar2]
 To solve this, we will follow these steps −
-● Define a map m
+● Define a map m <br>
 ● The set() method will be like
 ○ insert (timestamp, value) into m[key]
 ● The get() method will work as follows
