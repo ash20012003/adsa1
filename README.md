@@ -111,31 +111,31 @@ average, the cost of search, insert and delete from the hash table is O(1). In
 the worst case, its time complexity can go from O(1) to O(n2), especially for
 big prime numbers.
 Suppose we have to make a timestamp based key-value store class called
-TimeMap, that supports two operations.
-● set(string key, string value, int timestamp): This will store the key and
+TimeMap, that supports two operations. <br>
+● set(string key, string value, int timestamp): This will store the key and <br>
 value, along with the given timestamp
 ● get(string key, int timestamp): This will return a value such that
 set(key, value, timestamp_prev) was called previously, with
-timestamp_prev <= timestamp.
+timestamp_prev <= timestamp. <br>
 Now if there are multiple such values, it must return the value where the
 timestamp_prev value is largest. If there are no such values, it returns the
 empty string (""). So if we call the functions like below −
 set("foo","bar",1), get("foo",1), get("foo",3), set("foo","bar2",4), set("foo",4), set("foo",5),
 then the outputs will be: [null, “bar”, “bar”, null, “bar2”, “bar2]
 To solve this, we will follow these steps −
-● Define a map m <br>
-● The set() method will be like
-○ insert (timestamp, value) into m[key]
-● The get() method will work as follows
-○ ret := an empty string
-○ v := m[key]
-○ low := 0 and high := size of v – 1
-○ while low <= high
-■ mid := low + (high – low) / 2
-■ if key of v[mid] <= timestamp, then
-■ ret := value of v[mid] and set low := mid + 1
-■ otherwise high := mid – 1
-○ return ret
+<br>● Define a map m <br>
+● The set() method will be like <br>
+○ insert (timestamp, value) into m[key] <br>
+● The get() method will work as follows <br>
+○ ret := an empty string <br>
+○ v := m[key] <br>
+○ low := 0 and high := size of v – 1 <br>
+○ while low <= high <br>
+■ mid := low + (high – low) / 2 <br>
+■ if key of v[mid] <= timestamp, then <br>
+■ ret := value of v[mid] and set low := mid + 1 <br>
+■ otherwise high := mid – 1 <br>
+○ return ret <br>
 
 ## DATA STRUCTURE 3 - ARRAYS :
 An array is a collection of items stored at contiguous memory locations.
