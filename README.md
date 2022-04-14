@@ -113,7 +113,7 @@ big prime numbers.
 Suppose we have to make a timestamp based key-value store class called
 TimeMap, that supports two operations. <br>
 ● set(string key, string value, int timestamp): This will store the key and <br>
-value, along with the given timestamp
+value, along with the given timestamp <br>
 ● get(string key, int timestamp): This will return a value such that
 set(key, value, timestamp_prev) was called previously, with
 timestamp_prev <= timestamp. <br>
